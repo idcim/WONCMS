@@ -1,0 +1,37 @@
+<% include head %>
+	<% include nav %>
+	<div class="list fr">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= title %>内容</h3>
+				</div>
+				<div class="panel-body">
+					<% if(success){ %>
+						<div class="alert alert-success alert-dismissable">
+							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+							<%= success %></div>			
+					<% } %>
+					<% if(error){ %>
+						<div class="alert alert-danger alert-dismissable"><%= error %></div>
+					<% } %>
+					<% if(user){ %>
+						<div class="alert alert-danger alert-dismissable">用户<span class="label label-warning"><%= user.name %></span>登录成功！！</div>
+					<% }else{ %>
+					<div class="alert alert-danger alert-dismissable">未登录，请<a href="/login">登录</a>或<a href="/reg">注册</a></div>
+					<% } %>	
+					
+					<!-- 文章列表 -->
+					<ul class="list-group">
+					<% posts.forEach(function(post,index) { %>
+						
+						   <li class="list-group-item">
+						   	<h2><a href="#"><%= post.title %></a></h2>
+						   	<p>作者：<%= post.name %>|发表时间：<%= post.time.minute %></p>
+						   </li>
+						
+					<% }) %>
+					</ul>
+				</div>
+			</div>
+		</div>
+<% include footer %>

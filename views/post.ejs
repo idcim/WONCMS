@@ -1,0 +1,23 @@
+<% include head %>
+	<% include nav %>
+		<div class="list fr">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title"><%= title %>内容</h3>
+				</div>
+				<div class="panel-body">
+					<form role="form" method="post">
+						<div class="form-group">
+							<label for="title">文章标题</label>
+							<input name="title" type="text" class="form-control" id="title" placeholder="请输入文章标题">
+						</div>
+						<div class="form-group">
+							<label for="name">文章内容</label>
+							<textarea name="post" class="form-control" rows="4"></textarea>
+						</div>
+						<button type="submit" class="btn btn-info btn-lg">发　表</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<% include footer %>
